@@ -46,7 +46,11 @@ public function registerBundles()
 You can now use Doctrine Mongodb ODM documents provided:
 
 `Eo\JmsPaymentExtraBundle\Document\Credit`
+
 `Eo\JmsPaymentExtraBundle\Document\ExtendedData`
+
 `Eo\JmsPaymentExtraBundle\Document\FinancialTransaction`
+
 `Eo\JmsPaymentExtraBundle\Document\Payment`
+
 `Eo\JmsPaymentExtraBundle\Document\PaymentInstruction`
