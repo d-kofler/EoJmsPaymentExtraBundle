@@ -1,0 +1,28 @@
+{
+    "name": "eo/jms-payment-extra-bundle",
+    "type": "symfony-bundle",
+    "description": "MongoDB support for JMSPaymentCoreBundle",
+    "keywords": ["jms", "payment", "mongodb"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eymen Gunay",
+            "email": "eymen@egunay.com"
+        }
+    ],
+    "require": {
+        "symfony/symfony": "~2.1",
+        "jms/payment-core-bundle": ">=1.0.0"
+    },
+    "target-dir": "Eo/JmsPaymentExtraBundle",
+    "autoload": {
+        "psr-0": {
+            "Eo\\JmsPaymentExtraBundle": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="eo_jms_payment_extra.manager.class">Eo\JmsPaymentExtraBundle\Manager\EcommerceManager</parameter>
+
+        <parameter key="eo_jms_payment_extra.ppc.result_class">JMS\Payment\CoreBundle\PluginController\Result</parameter>
+        <parameter key="eo_jms_payment_extra.ppc.payment_class">Eo\JmsPaymentExtraBundle\Document\Payment</parameter>
+        <parameter key="eo_jms_payment_extra.ppc.payment_instruction_class">Eo\JmsPaymentExtraBundle\Document\PaymentInstruction</parameter>
+        <parameter key="eo_jms_payment_extra.ppc.financial_transaction_class">Eo\JmsPaymentExtraBundle\Document\FinancialTransaction</parameter>
+        <parameter key="eo_jms_payment_extra.ppc.credit_class">Eo\JmsPaymentExtraBundle\Document\Credit</parameter>
+    </parameters>
+
+    <services>
+        <!-- Document Plugin Controller -->
+        <service id="eo_jms_payment_extra.ppc_document" class="Eo\JmsPaymentExtraBundle\PluginController\DocumentPluginController">
+            <argument type="service" id="doctrine.odm.mongodb.document_manager"/>
+            <argument type="collection">
+                <argument key="result_class">%eo_jms_payment_extra.ppc.result_class%</argument>
+                <argument key="payment_instruction_class">%eo_jms_payment_extra.ppc.payment_instruction_class%</argument>
+                <argument key="payment_class">%eo_jms_payment_extra.ppc.payment_class%</argument>
+                <argument key="financial_transaction_class">%eo_jms_payment_extra.ppc.financial_transaction_class%</argument>
+                <argument key="credit_class">%eo_jms_payment_extra.ppc.credit_class%</argument>
+            </argument>
+            <argument type="service" id="event_dispatcher" />
+        </service>
+        <!-- Choose Payment Method Form Type -->
+        <service id="eo_jms_payment_extra.form.type.choose_payment_method" class="Eo\JmsPaymentExtraBundle\Form\Type\ChoosePaymentMethodType">
+            <argument type="service" id="eo_jms_payment_extra.ppc_document" />
+            <tag name="form.type" alias="eo_jms_payment_extra_choose_payment_method" />
+        </service>
+    </services>
+</container>
