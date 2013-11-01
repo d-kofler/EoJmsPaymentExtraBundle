@@ -12,9 +12,9 @@
 namespace Eo\JmsPaymentExtraBundle\PluginController;
 
 use JMS\Payment\CoreBundle\Plugin\QueryablePluginInterface;
-use Eo\JmsPaymentExtra\Document\FinancialTransaction;
-use Eo\JmsPaymentExtra\Document\Payment;
-use Eo\JmsPaymentExtra\Document\PaymentInstruction;
+use Eo\JmsPaymentExtraBundle\Document\FinancialTransaction;
+use Eo\JmsPaymentExtraBundle\Document\Payment;
+use Eo\JmsPaymentExtraBundle\Document\PaymentInstruction;
 use JMS\Payment\CoreBundle\Model\PaymentInstructionInterface;
 use JMS\Payment\CoreBundle\Model\PaymentInterface;
 use JMS\Payment\CoreBundle\PluginController\PluginController;
