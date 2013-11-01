@@ -318,7 +318,7 @@ class DocumentPluginController extends PluginController
     protected function createFinancialTransaction(PaymentInterface $payment)
     {
         if (!$payment instanceof Payment) {
-            throw new Exception('This controller only supports Doctrine2 entities as Payment objects.');
+            throw new Exception('This controller only supports Doctrine MongoDB ODM documents as Payment objects.');
         }
 
         $class =& $this->options['financial_transaction_class'];
@@ -331,7 +331,7 @@ class DocumentPluginController extends PluginController
     protected function doCreatePayment(PaymentInstructionInterface $instruction, $amount)
     {
         if (!$instruction instanceof PaymentInstruction) {
-            throw new Exception('This controller only supports Doctrine2 entities as PaymentInstruction objects.');
+            throw new Exception('This controller only supports Doctrine MongoDB ODM documents as PaymentInstruction objects.');
         }
 
         $class =& $this->options['payment_class'];
