@@ -23,6 +23,9 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
  */
 class PaymentInstruction implements PaymentInstructionInterface
 {
+    /**
+     * @var mixed
+     */
     private $account;
 
     /**
@@ -188,7 +191,7 @@ class PaymentInstruction implements PaymentInstructionInterface
      *
      * This method is called automatically from Credit::__construct().
      *
-     * @param Credit $credit
+     * @param  Credit $credit
      * @return void
      */
     public function addCredit(Credit $credit)
@@ -205,7 +208,7 @@ class PaymentInstruction implements PaymentInstructionInterface
      *
      * This method is called automatically from Payment::__construct().
      *
-     * @param Payment $payment
+     * @param  Payment $payment
      * @return void
      */
     public function addPayment(Payment $payment)

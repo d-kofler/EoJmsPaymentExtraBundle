@@ -17,6 +17,7 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 /**
  * Wires payment method types.
  *
+ * @author Johannes M. Schmitt <schmittjoh@gmail.com>
  * @author Eymen Gunay <eymen@egunay.com>
  */
 class AddPaymentMethodFormTypesPass implements CompilerPassInterface

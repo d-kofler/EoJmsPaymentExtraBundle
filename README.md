@@ -43,7 +43,7 @@ public function registerBundles()
 }
 ```
 
-You can now use Doctrine Mongodb ODM documents provided:
+You can now use Doctrine MongoDB ODM documents provided:
 
 `Eo\JmsPaymentExtraBundle\Document\Credit`
 

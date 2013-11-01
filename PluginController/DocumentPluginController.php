@@ -29,6 +29,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 /**
  * A concrete plugin controller implementation using the Doctrine ODM.
  *
+ * @author Johannes M. Schmitt <schmittjoh@gmail.com>
  * @author Eymen Gunay <eymen@egunay.com>
  */
 class DocumentPluginController extends PluginController
