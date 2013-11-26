@@ -12,11 +12,13 @@
         <parameter key="eo_jms_payment_extra.ppc.payment_instruction_class">Eo\JmsPaymentExtraBundle\Document\PaymentInstruction</parameter>
         <parameter key="eo_jms_payment_extra.ppc.financial_transaction_class">Eo\JmsPaymentExtraBundle\Document\FinancialTransaction</parameter>
         <parameter key="eo_jms_payment_extra.ppc.credit_class">Eo\JmsPaymentExtraBundle\Document\Credit</parameter>
+        <parameter key="eo_jms_payment_extra.ppc.controller_class">Eo\JmsPaymentExtraBundle\PluginController\DocumentPluginController</parameter>
+        <parameter key="eo_jms_payment_extra.ppc.form_class">Eo\JmsPaymentExtraBundle\Form\Type\ChoosePaymentMethodType</parameter>
     </parameters>
 
     <services>
         <!-- Document Plugin Controller -->
-        <service id="eo_jms_payment_extra.ppc_document" class="Eo\JmsPaymentExtraBundle\PluginController\DocumentPluginController">
+        <service id="eo_jms_payment_extra.ppc_document" class="%eo_jms_payment_extra.ppc.controller_class%">
             <argument type="service" id="doctrine.odm.mongodb.document_manager"/>
             <argument type="collection">
                 <argument key="result_class">%eo_jms_payment_extra.ppc.result_class%</argument>
@@ -28,7 +30,7 @@
             <argument type="service" id="event_dispatcher" />
         </service>
         <!-- Choose Payment Method Form Type -->
-        <service id="eo_jms_payment_extra.form.type.choose_payment_method" class="Eo\JmsPaymentExtraBundle\Form\Type\ChoosePaymentMethodType">
+        <service id="eo_jms_payment_extra.form.type.choose_payment_method" class="%eo_jms_payment_extra.ppc.form_class%">
             <argument type="service" id="eo_jms_payment_extra.ppc_document" />
             <tag name="form.type" alias="eo_jms_payment_extra_choose_payment_method" />
         </service>
