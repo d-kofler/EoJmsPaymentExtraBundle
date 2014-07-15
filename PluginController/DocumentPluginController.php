@@ -61,8 +61,6 @@ class DocumentPluginController extends PluginController
 
             return $result;
         } catch (\Exception $failure) {
-            $this->documentManager->close();
-
             throw $failure;
         }
     }
@@ -84,8 +82,6 @@ class DocumentPluginController extends PluginController
 
             return $result;
         } catch (\Exception $failure) {
-            $this->documentManager->close();
-
             throw $failure;
         }
     }
@@ -112,8 +108,6 @@ class DocumentPluginController extends PluginController
 
             return $credit;
         } catch (\Exception $failure) {
-            $this->documentManager->close();
-
             throw $failure;
         }
     }
@@ -130,8 +124,6 @@ class DocumentPluginController extends PluginController
             $this->documentManager->flush();
             return $credit;
         } catch (\Exception $failure) {
-            $this->documentManager->close();
-
             throw $failure;
         }
     }
@@ -160,8 +152,6 @@ class DocumentPluginController extends PluginController
 
             return $result;
         } catch (\Exception $failure) {
-            $this->documentManager->close();
-
             throw $failure;
         }
     }
@@ -183,8 +173,6 @@ class DocumentPluginController extends PluginController
 
             return $result;
         } catch (\Exception $failure) {
-            $this->documentManager->close();
-
             throw $failure;
         }
     }
@@ -255,8 +243,6 @@ class DocumentPluginController extends PluginController
 
             return $result;
         } catch (\Exception $failure) {
-            $this->documentManager->close();
-
             throw $failure;
         }
     }
@@ -275,8 +261,6 @@ class DocumentPluginController extends PluginController
 
             return $result;
         } catch (\Exception $failure) {
-            $this->documentManager->close();
-
             throw $failure;
         }
     }
@@ -295,8 +279,6 @@ class DocumentPluginController extends PluginController
 
             return $result;
         } catch (\Exception $failure) {
-            $this->documentManager->close();
-
             throw $failure;
         }
     }
